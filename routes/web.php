@@ -41,6 +41,34 @@ Route::group(['middleware' => 'auth'], function () {
 
 });
 
+// Mobile Routes
+Route::group(['prefix' => 'm'], function () {
+
+    // redirect to home
+    Route::get('/', function () {
+        return redirect('m/home');
+    });
+
+    // home
+    Route::group(['prefix' => 'home'], function () {
+
+        Route::get('/', function () {
+            return view('mobile.home');
+        });
+
+    });
+
+    // me
+    Route::group(['prefix' => 'me'], function () {
+
+        Route::get('/', function () {
+            return view('mobile.me');
+        });
+
+    });
+
+});
+
 // Console Routes
 Route::group(['prefix' => 'console'], function () {
 
