@@ -1,4 +1,4 @@
-@extends('angulr.layout.frame')
+@extends('angulr.layout.console_frame')
 
 @section('content')
 

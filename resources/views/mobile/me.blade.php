@@ -1,4 +1,4 @@
-@extends('mobile.layouts.mobile_base')
+@extends('mobile.layouts.mobile_frame')
 
 @section('title', '我')
 

@@ -12,12 +12,41 @@
     <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
     <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
 
+    <script type="text/javascript">
+        <?php
+        $user = \Auth::user();
+        if ($user) {
+            $user->setVisible([
+                'user_id',
+                'name',
+            ]);
+            $user = $user->toArray();
+        } else {
+            $user = new ArrayObject();
+        }
+        $data = [
+            'locale' => app_locale(),
+            'baseUrl' => url('/'),
+            'state' => [
+                'user' => $user,
+            ],
+        ];
+        echo 'window.Someline = ' . json_encode($data);
+        ?>
+    </script>
+    <script type="text/javascript">
+        <?php
+        $data = [
+            'csrfToken' => csrf_token(),
+        ];
+        echo 'window.Laravel = ' . json_encode($data);
+        ?>
+    </script>
 </head>
 <body>
-<div class="page-group">
-    @yield('page-group')
-
-
+<div id="app" class="app @yield('div.app.class')">
+    <div class="page-group">
+        @yield('page-group')
     </div>
 </div>
 
@@ -26,6 +55,6 @@
 <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
 <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
-
+@stack('scripts')
 </body>
 </html>

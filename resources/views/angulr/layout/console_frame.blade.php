@@ -15,5 +15,5 @@
 @endsection
 
 @push('scripts')
-<script src="{{url(elixir("js/app.src.js"))}}"></script>
+<script src="{{url(elixir("js/console.src.js"))}}"></script>
 @endpush

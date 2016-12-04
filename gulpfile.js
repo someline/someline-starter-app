@@ -15,7 +15,9 @@ require('laravel-elixir-vue');
 
 elixir(mix => {
     mix.sass('app.scss')
-       .webpack('app.js');
+       .webpack('app.js')
+       .webpack('console.js')
+       .webpack('mobile.js');
 
     // less
     mix.less('app.less', 'resources/assets/less/css/');
@@ -32,7 +34,7 @@ elixir(mix => {
         'resources/assets/less/css/*.css',
     ], 'public/css/app.src.css', './');
 
-    // scripts
+    // app scripts
     mix.scripts([
         // theme script
         'public/js/theme.src.js',
@@ -44,10 +46,28 @@ elixir(mix => {
         'public/js/app.js',
     ], 'public/js/app.src.js', './');
 
+    // console scripts
+    mix.scripts([
+        // theme script
+        'public/js/theme.src.js',
+
+        // main vue js
+        'public/js/console.js',
+    ], 'public/js/console.src.js', './');
+
+    // mobile scripts
+    mix.scripts([
+        // main vue js
+        'public/js/mobile.js',
+    ], 'public/js/mobile.src.js', './');
+
     // versions
     mix.version([
         "public/css/app.src.css",
+
         "public/js/app.src.js",
+        "public/js/console.src.js",
+        "public/js/mobile.src.js",
     ]);
 
 });
