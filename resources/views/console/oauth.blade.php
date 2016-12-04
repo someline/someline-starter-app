@@ -1,4 +1,4 @@
-@extends('angulr.layout.frame_without_aside')
+@extends('console.layout.frame_without_aside')
 
 @section('content')
     <div class="row">
