@@ -44,6 +44,13 @@ Route::group(['middleware' => 'auth'], function () {
 // Console Routes
 Route::group(['prefix' => 'console'], function () {
 
+    // Protected Routes
+    Route::group(['middleware' => 'auth'], function () {
+
+        Route::get('/', 'ConsoleController@index');
+
+    });
+
     Route::get('oauth', function () {
         return view('console.oauth');
     });
