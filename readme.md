@@ -1,4 +1,4 @@
-# Someline Starter PHP Framework
+# Someline Starter App PHP Framework
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
 [![Software License][ico-license]](LICENSE.md)
@@ -91,7 +91,7 @@ You can get started either option A or B:
 Under working folder, run the command:
 
 ```
-composer create-project --prefer-dist someline/someline-starter someline-starter
+composer create-project --prefer-dist someline/someline-starter-app someline-starter-app
 ```
 
 #### A.1. Add to a git repository *(When Needed)*
@@ -114,7 +114,7 @@ git push -u origin master
 Clone this project to your working folder and open the directory:
 
 ```
-git clone https://github.com/someline/someline-starter
+git clone https://github.com/someline/someline-starter-app
 ```
 
 #### B.1. Add to a git repository *(When Needed)*
@@ -122,7 +122,7 @@ git clone https://github.com/someline/someline-starter
 Change `https://github.com/username/repository-name.git` to your own git repository address.
 
 ```
-cd someline-starter
+cd someline-starter-app
 rm -rf .git
 
 git init
@@ -149,7 +149,7 @@ git push -u origin master
 Open `someline-starter` folder *(Optional, run only when you are not inside the project root folder)*
 
 ```
-cd someline-starter
+cd someline-starter-app
 ```
 
 *All these commands should be executed under the root of someline-starter project*
